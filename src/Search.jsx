@@ -8,7 +8,7 @@ const Search = () => {
 
   return (
     <div className="text-white px-4 py-6 sm:py-6 sm:px-24">
-      <div className="flex justify-between mb-12">
+      <div className="flex flex-col sm:flex-row justify-between mb-12">
         <input
           className="bg-blueEl border-none outline-none px-12 py-4 rounded-sm text-sm"
           type="text"

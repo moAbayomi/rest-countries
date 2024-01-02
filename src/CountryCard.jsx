@@ -9,11 +9,11 @@ const CountryCard = ({ country }) => {
   return (
     <div
       onClick={() => nav(`/${name}`)}
-      className="w-[250px] flex flex-col gap-[5%]  bg-blueEl shadow-blueBg border-none rounded-lg cursor-pointer"
+      className=" flex flex-col gap-[5%]  bg-blueEl shadow-blueBg border-none rounded-lg cursor-pointer"
     >
-      <div className="w-[250px] basis-[40%] rounded-tr-lg rounded-tl-lg">
+      <div className="max-w-full basis-[40%] rounded-tr-lg rounded-tl-lg">
         <img
-          className="max-w-full w-[100%] h-[150px] rounded-tr-lg rounded-tl-lg"
+          className="max-w-full w-[100%] h-[150px] object-cover rounded-tr-lg rounded-tl-lg"
           src={flag}
           alt="country flag"
         />
