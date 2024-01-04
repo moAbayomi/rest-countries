@@ -10,6 +10,9 @@ export const CountryProvider = ({ children }) => {
   const [info, setInfo] = useState([]);
   const [search, setSearch] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleDarkMode = () => setDarkMode((prev) => !prev);
 
   const handleSelectedRegion = (e) => setSelectedRegion(e.target.value);
 
@@ -29,7 +32,6 @@ export const CountryProvider = ({ children }) => {
   }, [search]);
 
   useEffect(() => {
-    console.log("aayya");
     fetch("../assets/data.json")
       .then((resp) => resp.json())
       .then((output) => {
@@ -39,7 +41,6 @@ export const CountryProvider = ({ children }) => {
         if (selectedRegion == "") {
           setInfo(output);
         } else {
-          console.log(modSelectedRegion);
           setInfo(modSelectedRegion);
         }
       });
@@ -47,7 +48,15 @@ export const CountryProvider = ({ children }) => {
 
   return (
     <CountryContext.Provider
-      value={{ info, search, setSearch, selectedRegion, handleSelectedRegion }}
+      value={{
+        info,
+        search,
+        setSearch,
+        selectedRegion,
+        handleSelectedRegion,
+        darkMode,
+        toggleDarkMode,
+      }}
     >
       {children}
     </CountryContext.Provider>
