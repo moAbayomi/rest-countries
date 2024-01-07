@@ -28,7 +28,8 @@ export const CountryProvider = ({ children }) => {
         } else {
           setInfo(modOutput);
         }
-      });
+      })
+      .catch(console.log);
   }, [search]);
 
   useEffect(() => {
@@ -43,7 +44,8 @@ export const CountryProvider = ({ children }) => {
         } else {
           setInfo(modSelectedRegion);
         }
-      });
+      })
+      .catch(console.log);
   }, [selectedRegion]);
 
   return (
