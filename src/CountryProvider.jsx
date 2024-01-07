@@ -17,7 +17,7 @@ export const CountryProvider = ({ children }) => {
   const handleSelectedRegion = (e) => setSelectedRegion(e.target.value);
 
   useEffect(() => {
-    fetch("../public/data.json")
+    fetch("/data.json")
       .then((resp) => resp.json())
       .then((output) => {
         const modOutput = output.filter((out) =>
@@ -33,7 +33,7 @@ export const CountryProvider = ({ children }) => {
   }, [search]);
 
   useEffect(() => {
-    fetch("../public/data.json")
+    fetch("/data.json")
       .then((resp) => resp.json())
       .then((output) => {
         const modSelectedRegion = output.filter((country) => {
